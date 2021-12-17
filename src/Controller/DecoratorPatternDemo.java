@@ -1,9 +1,6 @@
 package Controller;
 
-import Model.Bicycle;
-import Model.Car;
-import Model.ColourVehicleDecorator;
-import Model.Vehicle;
+import Model.*;
 
 /**
  * @author Annemiek Blaauwgeers <a.blaauwgeers@st.hanze.nl>
@@ -16,6 +13,9 @@ public class DecoratorPatternDemo {
         Vehicle car = new Car();
         Vehicle redCar = new ColourVehicleDecorator(new Car(), "Red");
         Vehicle yellowBicycle = new ColourVehicleDecorator(new Bicycle(), "Yellow");
+        Vehicle boat = new Boat();
+        Vehicle boat2 = new EngineVehicleDecorator(new Boat(), "diesel");
+        Vehicle roeiboot = new EngineVehicleDecorator(new Boat(), "muscles");
 
         System.out.println("Just a normal grey car");
         car.design();
@@ -26,5 +26,13 @@ public class DecoratorPatternDemo {
 
         System.out.println("\nNow there's a yellow bicycle");
         yellowBicycle.design();
+
+        boat.design();
+
+        System.out.println("\nA boat running on diesel");
+        boat2.design();
+
+        System.out.println("\nrow row row your boat....");
+        roeiboot.design();
     }
 }
