@@ -61,5 +61,14 @@ public class DecoratorPatternDemo {
 
         System.out.println("\nNow the bicycle has 3 wheels");
         bicycleWithThreeWheels.design();
+
+        carWithSixWheels = new ColourVehicleDecorator(carWithSixWheels, "Orange");
+        bicycleWithThreeWheels = new ColourVehicleDecorator(bicycleWithThreeWheels, "Gold");
+
+        System.out.println("\nNow the car with 6 wheels is orange");
+        carWithSixWheels.design();
+
+        System.out.println("\nNow the bicycle with 3 wheels is gold");
+        bicycleWithThreeWheels.design();
     }
 }
