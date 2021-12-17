@@ -16,7 +16,7 @@ public class DecoratorPatternDemo {
         Vehicle redCar = new ColourVehicleDecorator(new Car(), "Red");
         Vehicle yellowBicycle = new ColourVehicleDecorator(new Bicycle(), "Yellow");
         Vehicle boat = new EngineVehicleDecorator(new Boat(), "diesel");
-        Vehicle boat2 = new EngineVehicleDecorator(new Boat(), "diesel");
+        Vehicle boat2 = new EngineVehicleDecorator(new Boat(), "muscle");
 
         // Eerste Decorator voor leuke kleurtjes
         System.out.println("Just a normal grey car");
@@ -73,5 +73,13 @@ public class DecoratorPatternDemo {
 
         System.out.println("\nNow the bicycle with 3 wheels is gold");
         bicycleWithThreeWheels.design();
+
+        // Een voertuig waar alle Decorators op toegepast worden
+        Vehicle niceBoat = new ColourVehicleDecorator(new Boat(), "Bright Pink");
+        niceBoat = new WheelVehicleDecorator(niceBoat, 10);
+        niceBoat = new EngineVehicleDecorator(niceBoat, "Muscles");
+
+        System.out.println("\nSuch a pretty boat!");
+        niceBoat.design();
     }
 }
