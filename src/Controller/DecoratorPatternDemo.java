@@ -28,5 +28,42 @@ public class DecoratorPatternDemo {
 
         System.out.println("Boat");
         boat.design();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Vehicle carWithDigitalGPS = new GPSVehicleDecorator(new Car(), "TomTom");
+        Vehicle bicycleWithMap = new GPSVehicleDecorator(new Bicycle(), "Paper map");
+
+        System.out.println("\nNormal grey car with a built in GPS system");
+        carWithDigitalGPS.design();
+
+        System.out.println("\nNormal grey bicycle with a paper map");
+        bicycleWithMap.design();
+
+        carWithDigitalGPS = new ColourVehicleDecorator(carWithDigitalGPS, "Blue");
+        bicycleWithMap = new ColourVehicleDecorator(bicycleWithMap, "Pink");
+
+        System.out.println("\nNow the car with GPS is blue");
+        carWithDigitalGPS.design();
+
+        System.out.println("\nNow the bicycle with paper map is pink");
+        bicycleWithMap.design();
     }
 }
