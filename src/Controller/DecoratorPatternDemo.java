@@ -2,7 +2,7 @@ package Controller;
 
 import Model.Bicycle;
 import Model.Car;
-import Model.RedVehicleDecorator;
+import Model.ColourVehicleDecorator;
 import Model.Vehicle;
 
 /**
@@ -14,16 +14,17 @@ public class DecoratorPatternDemo {
     public static void main(String[] args) {
 
         Vehicle car = new Car();
-        Vehicle redCar = new RedVehicleDecorator(new Car());
-        Vehicle redBicycle = new RedVehicleDecorator(new Bicycle());
+        Vehicle redCar = new ColourVehicleDecorator(new Car(), "Red");
+        Vehicle yellowBicycle = new ColourVehicleDecorator(new Bicycle(), "Yellow");
 
-        System.out.println("Just a normal car");
+        System.out.println("Just a normal grey car");
         car.design();
 
         System.out.println("\nNow there's a red car");
+
         redCar.design();
 
-        System.out.println("\nNow there's a red bicycle");
-        redBicycle.design();
+        System.out.println("\nNow there's a yellow bicycle");
+        yellowBicycle.design();
     }
 }
