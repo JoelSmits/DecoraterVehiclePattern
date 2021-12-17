@@ -12,6 +12,9 @@ public abstract class VehicleDecorator implements Vehicle {
         this.decoratedVehicle = decoratedVehicle;
     }
 
+    public VehicleDecorator() {
+    }
+
     @Override
     public void design() {
         decoratedVehicle.design();
