@@ -2,6 +2,8 @@ package Controller;
 
 import Model.*;
 
+import java.sql.SQLOutput;
+
 /**
  * @author Annemiek Blaauwgeers <a.blaauwgeers@st.hanze.nl>
  * <p>
@@ -14,6 +16,7 @@ public class DecoratorPatternDemo {
         Vehicle redCar = new ColourVehicleDecorator(new Car(), "Red");
         Vehicle yellowBicycle = new ColourVehicleDecorator(new Bicycle(), "Yellow");
         Vehicle boat = new EngineVehicleDecorator(new Boat(), "diesel");
+        Vehicle boat2 = new EngineVehicleDecorator(new Boat(), "diesel");
 
 
         System.out.println("Just a normal grey car");
@@ -32,7 +35,6 @@ public class DecoratorPatternDemo {
         System.out.println("\nrow row row your boat.....");
         boat2.design();
 
-
         Vehicle carWithDigitalGPS = new GPSVehicleDecorator(new Car(), "TomTom");
         Vehicle bicycleWithMap = new GPSVehicleDecorator(new Bicycle(), "Paper map");
 
@@ -50,5 +52,14 @@ public class DecoratorPatternDemo {
 
         System.out.println("\nNow the bicycle with paper map is pink");
         bicycleWithMap.design();
+
+        Vehicle carWithSixWheels = new WheelVehicleDecorator(new Car(), 6);
+        Vehicle bicycleWithThreeWheels = new WheelVehicleDecorator(new Bicycle(), 3);
+
+        System.out.println("\nNow the car has 6 wheels");
+        carWithSixWheels.design();
+
+        System.out.println("\nNow the bicycle has 3 wheels");
+        bicycleWithThreeWheels.design();
     }
 }
