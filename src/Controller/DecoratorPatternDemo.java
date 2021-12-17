@@ -16,11 +16,7 @@ public class DecoratorPatternDemo {
         Vehicle redCar = new ColourVehicleDecorator(new Car(), "Red");
         Vehicle yellowBicycle = new ColourVehicleDecorator(new Bicycle(), "Yellow");
         Vehicle boat = new EngineVehicleDecorator(new Boat(), "diesel");
-<<<<<<< HEAD
         Vehicle boat2 = new EngineVehicleDecorator(new Boat(), "diesel");
-=======
-        Vehicle boat2 = new EngineVehicleDecorator(new Boat(), "muscle");
->>>>>>> bf9b0de14b278961e4a0789f261bac65749e1f73
 
 
         System.out.println("Just a normal grey car");
