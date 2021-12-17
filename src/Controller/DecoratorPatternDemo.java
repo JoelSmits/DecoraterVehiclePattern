@@ -18,7 +18,7 @@ public class DecoratorPatternDemo {
         Vehicle boat = new EngineVehicleDecorator(new Boat(), "diesel");
         Vehicle boat2 = new EngineVehicleDecorator(new Boat(), "diesel");
 
-
+        // Eerste Decorator voor leuke kleurtjes
         System.out.println("Just a normal grey car");
         car.design();
 
@@ -29,12 +29,14 @@ public class DecoratorPatternDemo {
         System.out.println("\nNow there's a yellow bicycle");
         yellowBicycle.design();
 
+        // Nieuwe voertuigen die een mooi design kunnen krijgen
         System.out.println("\nNext up, a boat!");
         boat.design();
 
         System.out.println("\nrow row row your boat.....");
         boat2.design();
 
+        // Nieuwe Decorator voor het toevoegen van navigatiesystemen
         Vehicle carWithDigitalGPS = new GPSVehicleDecorator(new Car(), "TomTom");
         Vehicle bicycleWithMap = new GPSVehicleDecorator(new Bicycle(), "Paper map");
 
@@ -47,12 +49,13 @@ public class DecoratorPatternDemo {
         carWithDigitalGPS = new ColourVehicleDecorator(carWithDigitalGPS, "Blue");
         bicycleWithMap = new ColourVehicleDecorator(bicycleWithMap, "Pink");
 
-        System.out.println("\nNow the car with GPS is blue");
+        System.out.println("\nNow the car with GPS is blue!");
         carWithDigitalGPS.design();
 
-        System.out.println("\nNow the bicycle with paper map is pink");
+        System.out.println("\nNow the bicycle with a paper map is pink!");
         bicycleWithMap.design();
 
+        // Nog een nieuwe Decorator voor het aantal wielen
         Vehicle carWithSixWheels = new WheelVehicleDecorator(new Car(), 6);
         Vehicle bicycleWithThreeWheels = new WheelVehicleDecorator(new Bicycle(), 3);
 
